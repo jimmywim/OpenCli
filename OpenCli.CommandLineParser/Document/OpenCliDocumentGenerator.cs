@@ -47,6 +47,9 @@ namespace OpenCli.CommandLineParser.Document
                     }
                 }
 
+                // Todo: This method will likely duplicate options that were found when scanning for options inside Verb classes
+                // CommandLineParser lets you add options to a class without a verb attribute, so this will currently duplicate options
+                // into the top-level Document, which were found when adding options to the verb classes from before
                 var optionAttributes = type.GetCustomAttributes(typeof(OptionAttribute), false);
                 foreach (OptionAttribute attribute in optionAttributes)
                 {
