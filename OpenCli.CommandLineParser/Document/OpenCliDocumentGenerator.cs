@@ -33,6 +33,11 @@ namespace OpenCli.CommandLineParser.Document
                         Hidden = verbAttribute.Hidden,
                     };
 
+                    if (document.Commands == null)
+                    {
+                        document.Commands = new Dictionary<string, OpenCliCommand>();
+                    }
+
                     document.Commands.Add(verbAttribute.Name, command);
 
 
@@ -49,7 +54,13 @@ namespace OpenCli.CommandLineParser.Document
                                 Description = verbOption.HelpText,
                                 Hidden =verbOption.Hidden,
                                 Required = verbOption.Required,
+                                Group = verbOption.Group
                             };
+
+                            if (document.Options == null)
+                            {
+                                document.Options = new Dictionary<string, OpenCliOption>();
+                            }
 
                             command.Options.Add($"--{verbOption.LongName}", option);
                         }
@@ -59,20 +70,30 @@ namespace OpenCli.CommandLineParser.Document
                 // Todo: This method will likely duplicate options that were found when scanning for options inside Verb classes
                 // CommandLineParser lets you add options to a class without a verb attribute, so this will currently duplicate options
                 // into the top-level Document, which were found when adding options to the verb classes from before
-                var optionAttributes = type.GetCustomAttributes(typeof(OptionAttribute), false);
-                foreach (OptionAttribute attribute in optionAttributes)
+                var typeProps = type.GetProperties(BindingFlags.Instance | BindingFlags.Public);
+                foreach(var typeProp in typeProps)
                 {
-                    OpenCliOption option = new OpenCliOption
+                    var optionAttributes = typeProp.GetCustomAttributes(typeof(OptionAttribute), false);
+                    foreach (OptionAttribute attribute in optionAttributes)
                     {
-                        Required = attribute.Required,
-                        Description = attribute.HelpText,
-                        Aliases = new List<string>() { $"-{attribute.ShortName}" },
-                        Group = attribute.Group,
-                        Hidden = attribute.Hidden,
-                    };
-                    
-                    document.Options.Add($"--{attribute.LongName}", option);
+                        OpenCliOption option = new OpenCliOption
+                        {
+                            Required = attribute.Required,
+                            Description = attribute.HelpText,
+                            Aliases = new List<string>() { $"-{attribute.ShortName}" },
+                            Group = attribute.Group,
+                            Hidden = attribute.Hidden,
+                        };
+
+                        if (document.Options == null)
+                        {
+                            document.Options = new Dictionary<string, OpenCliOption>();
+                        }
+
+                        document.Options.Add($"--{attribute.LongName}", option);
+                    }
                 }
+              
             }
 
             return document;
