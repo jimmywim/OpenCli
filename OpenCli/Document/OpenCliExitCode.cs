@@ -2,7 +2,7 @@
 {
     public class OpenCliExitCode
     {
-        public int Code { get; set; }
-        public string Description { get; set; }
+        public int Code { get; set; } = 0;
+        public string? Description { get; set; }
     }
 }

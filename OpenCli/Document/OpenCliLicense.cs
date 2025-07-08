@@ -2,7 +2,7 @@
 {
     public class OpenCliLicense
     {
-        public string Name { get; set; }
-        public string Identifier { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public string? Identifier { get; set; }
     }
 }

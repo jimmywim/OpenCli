@@ -2,7 +2,7 @@
 {
     public class OpenCliConventions
     {
-        public bool GroupOptions { set; get; }
-        public string OptionArgumentSeperator { get; set; }
+        public bool? GroupOptions { set; get; }
+        public string? OptionArgumentSeperator { get; set; }
     }
 }

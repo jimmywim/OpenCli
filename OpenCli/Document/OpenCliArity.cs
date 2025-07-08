@@ -2,7 +2,7 @@
 {
     public class OpenCliArity
     {
-        public int Minimum { get; set; }
-        public int Maximum { get; set; }
+        public int? Minimum { get; set; }
+        public int? Maximum { get; set; }
     }
 }

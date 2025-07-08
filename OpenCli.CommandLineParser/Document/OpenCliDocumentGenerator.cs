@@ -57,9 +57,9 @@ namespace OpenCli.CommandLineParser.Document
                                 Group = verbOption.Group
                             };
 
-                            if (document.Options == null)
+                            if (command.Options == null)
                             {
-                                document.Options = new Dictionary<string, OpenCliOption>();
+                                command.Options = new Dictionary<string, OpenCliOption>();
                             }
 
                             command.Options.Add($"--{verbOption.LongName}", option);
