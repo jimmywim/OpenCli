@@ -6,8 +6,17 @@ using System.Reflection;
 
 namespace OpenCli.CommandLineParser.Document
 {
+    /// <summary>
+    /// A class for generating an OpenCli Specification Document from a specified Assembly. 
+    /// This scans the assembly for types and attributes used by CommandLineParser to define command line verbs and options
+    /// </summary>
     public class OpenCliDocumentGenerator
     {
+        /// <summary>
+        /// Create an OpenCli Specification Document from the given Assembly
+        /// </summary>
+        /// <param name="assembly">An assembly that contains types that use CommandLineParser Attributes</param>
+        /// <returns>An OpenCliDocument representing the assembly by its use of CommandLineParser Attributes</returns>
         public static OpenCliDocument CreateFromAssembly(Assembly assembly)
         {
             var document = new OpenCliDocument();
