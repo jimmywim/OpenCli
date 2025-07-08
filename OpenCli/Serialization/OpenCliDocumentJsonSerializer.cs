@@ -23,7 +23,8 @@ namespace OpenCli.Serialization
             var options = new System.Text.Json.JsonSerializerOptions
             {
                 WriteIndented = true,
-                DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull
+                DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+                PropertyNamingPolicy =System.Text.Json.JsonNamingPolicy.CamelCase
             };
 
             return System.Text.Json.JsonSerializer.Serialize(this.document, options);
