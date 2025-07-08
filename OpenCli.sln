@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenCli", "OpenCli\OpenCli.csproj", "{B260D2E1-DF27-4CE2-B7BC-4176376AFE3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenCli.CommandLineParser", "OpenCli.CommandLineParser\OpenCli.CommandLineParser.csproj", "{9776A81A-0B08-4790-A65E-B19D1A95429E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B260D2E1-DF27-4CE2-B7BC-4176376AFE3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B260D2E1-DF27-4CE2-B7BC-4176376AFE3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B260D2E1-DF27-4CE2-B7BC-4176376AFE3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B260D2E1-DF27-4CE2-B7BC-4176376AFE3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9776A81A-0B08-4790-A65E-B19D1A95429E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9776A81A-0B08-4790-A65E-B19D1A95429E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9776A81A-0B08-4790-A65E-B19D1A95429E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9776A81A-0B08-4790-A65E-B19D1A95429E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CDB75555-7384-42C7-8419-8258C64C9D63}
+	EndGlobalSection
+EndGlobal
